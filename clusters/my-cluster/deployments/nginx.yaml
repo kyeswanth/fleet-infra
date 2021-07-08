@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: ngnix:latest
+        image: gcr.io/som-rit-infrastructure-dev/nginx:1.20
         ports:
         - containerPort: 80
