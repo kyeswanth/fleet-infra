@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: gcr.io/som-rit-infrastructure-dev/nginx
+        image: us-west1-docker.pkg.dev/som-rit-infrastructure-prod/mhealth/mhealth:build-1417
         ports:
         - containerPort: 80
