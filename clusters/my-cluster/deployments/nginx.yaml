@@ -1,4 +1,4 @@
-apiVersion: batch/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:latest
+        image: gcr.io/som-rit-infrastructure-dev/nginx
         ports:
         - containerPort: 80
