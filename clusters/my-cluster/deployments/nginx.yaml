@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
-  namespace: nginx
+  namespace: nginx-latest
 spec:
   selector:
     matchLabels:
@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: us-west1-docker.pkg.dev/som-rit-infrastructure-prod/mhealth/mhealth:build-1417
+        image: ngnix:latest
         ports:
         - containerPort: 80
