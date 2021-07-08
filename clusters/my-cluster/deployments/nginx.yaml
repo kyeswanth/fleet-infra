@@ -4,6 +4,7 @@ metadata:
   name: nginx-deployment
   namespace: nginx
 spec:
+  serviceAccountName: nginx-k8s-pods-sa
   selector:
     matchLabels:
       app: nginx
