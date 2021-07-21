@@ -16,7 +16,7 @@ spec:
       serviceAccountName: nginx-k8s-pods-sa
       containers:
         - name: nginx
-          image: us-west1-docker.pkg.dev/som-rit-infrastructure-prod/third-party/nginx:build-20 # {"$imagepolicy": "flux-system:podinfo"}
+          image: us-west1-docker.pkg.dev/som-rit-infrastructure-prod/third-party/nginx:build-20 # {"$imagepolicy": "flux-system-new:podinfo"}
           ports:
             - containerPort: 80
 
