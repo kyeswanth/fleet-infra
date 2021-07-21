@@ -1,0 +1,34 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: gar-credentials-sync
+  namespace: flux-system-new
+rules:
+- apiGroups: [""]
+  resources:
+  - secrets
+  verbs:
+  - get
+  - create
+  - patch
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: gar-credentials-sync
+  namespace: flux-system-new
+subjects:
+- kind: ServiceAccount
+  name: gar-credentials-sync
+roleRef:
+  kind: Role
+  name: gar-credentials-sync
+  apiGroup: ""
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  annotations:
+    iam.gke.io/gcp-service-account: flux-svc@som-rit-infrastructure-dev.iam.gserviceaccount.com
+  name: gar-credentials-sync
+  namespace: flux-system-new
