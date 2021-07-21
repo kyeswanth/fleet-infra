@@ -3,7 +3,7 @@ apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageRepository
 metadata:
   name: podinfo
-  namespace: flux-system-new
+  namespace: flux-system
 spec:
   image: us-west1-docker.pkg.dev/som-rit-infrastructure-prod/third-party/nginx
   interval: 1m0s
@@ -14,7 +14,7 @@ apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
   name: podinfo
-  namespace: flux-system-new
+  namespace: flux-system
 spec:
   imageRepositoryRef:
     name: podinfo
@@ -29,7 +29,7 @@ apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageUpdateAutomation
 metadata:
   name: flux-system
-  namespace: flux-system-new
+  namespace: flux-system
 spec:
   interval: 1m0s
   sourceRef:

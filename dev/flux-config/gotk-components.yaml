@@ -5,7 +5,7 @@ metadata:
     app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
     app.kubernetes.io/version: v0.16.0
-  name: flux-system-new
+  name: flux-system
 ---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
@@ -4883,7 +4883,7 @@ metadata:
     app.kubernetes.io/part-of: flux
     app.kubernetes.io/version: v0.16.0
   name: helm-controller
-  namespace: flux-system-new
+  namespace: flux-system
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -4893,7 +4893,7 @@ metadata:
     app.kubernetes.io/part-of: flux
     app.kubernetes.io/version: v0.16.0
   name: image-automation-controller
-  namespace: flux-system-new
+  namespace: flux-system
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -4903,7 +4903,7 @@ metadata:
     app.kubernetes.io/part-of: flux
     app.kubernetes.io/version: v0.16.0
   name: image-reflector-controller
-  namespace: flux-system-new
+  namespace: flux-system
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -4913,7 +4913,7 @@ metadata:
     app.kubernetes.io/part-of: flux
     app.kubernetes.io/version: v0.16.0
   name: kustomize-controller
-  namespace: flux-system-new
+  namespace: flux-system
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -4923,7 +4923,7 @@ metadata:
     app.kubernetes.io/part-of: flux
     app.kubernetes.io/version: v0.16.0
   name: notification-controller
-  namespace: flux-system-new
+  namespace: flux-system
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -4933,7 +4933,7 @@ metadata:
     app.kubernetes.io/part-of: flux
     app.kubernetes.io/version: v0.16.0
   name: source-controller
-  namespace: flux-system-new
+  namespace: flux-system
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -5030,10 +5030,10 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: kustomize-controller
-  namespace: flux-system-new
+  namespace: flux-system
 - kind: ServiceAccount
   name: helm-controller
-  namespace: flux-system-new
+  namespace: flux-system
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -5050,22 +5050,22 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: kustomize-controller
-  namespace: flux-system-new
+  namespace: flux-system
 - kind: ServiceAccount
   name: helm-controller
-  namespace: flux-system-new
+  namespace: flux-system
 - kind: ServiceAccount
   name: source-controller
-  namespace: flux-system-new
+  namespace: flux-system
 - kind: ServiceAccount
   name: notification-controller
-  namespace: flux-system-new
+  namespace: flux-system
 - kind: ServiceAccount
   name: image-reflector-controller
-  namespace: flux-system-new
+  namespace: flux-system
 - kind: ServiceAccount
   name: image-automation-controller
-  namespace: flux-system-new
+  namespace: flux-system
 ---
 apiVersion: v1
 kind: Service
@@ -5076,7 +5076,7 @@ metadata:
     app.kubernetes.io/version: v0.16.0
     control-plane: controller
   name: notification-controller
-  namespace: flux-system-new
+  namespace: flux-system
 spec:
   ports:
   - name: http
@@ -5096,7 +5096,7 @@ metadata:
     app.kubernetes.io/version: v0.16.0
     control-plane: controller
   name: source-controller
-  namespace: flux-system-new
+  namespace: flux-system
 spec:
   ports:
   - name: http
@@ -5116,7 +5116,7 @@ metadata:
     app.kubernetes.io/version: v0.16.0
     control-plane: controller
   name: webhook-receiver
-  namespace: flux-system-new
+  namespace: flux-system
 spec:
   ports:
   - name: http
@@ -5136,7 +5136,7 @@ metadata:
     app.kubernetes.io/version: v0.16.0
     control-plane: controller
   name: helm-controller
-  namespace: flux-system-new
+  namespace: flux-system
 spec:
   replicas: 1
   selector:
@@ -5209,7 +5209,7 @@ metadata:
     app.kubernetes.io/version: v0.16.0
     control-plane: controller
   name: image-automation-controller
-  namespace: flux-system-new
+  namespace: flux-system
 spec:
   replicas: 1
   selector:
@@ -5284,7 +5284,7 @@ metadata:
     app.kubernetes.io/version: v0.16.0
     control-plane: controller
   name: image-reflector-controller
-  namespace: flux-system-new
+  namespace: flux-system
 spec:
   replicas: 1
   selector:
@@ -5363,7 +5363,7 @@ metadata:
     app.kubernetes.io/version: v0.16.0
     control-plane: controller
   name: kustomize-controller
-  namespace: flux-system-new
+  namespace: flux-system
 spec:
   replicas: 1
   selector:
@@ -5438,7 +5438,7 @@ metadata:
     app.kubernetes.io/version: v0.16.0
     control-plane: controller
   name: notification-controller
-  namespace: flux-system-new
+  namespace: flux-system
 spec:
   replicas: 1
   selector:
@@ -5514,7 +5514,7 @@ metadata:
     app.kubernetes.io/version: v0.16.0
     control-plane: controller
   name: source-controller
-  namespace: flux-system-new
+  namespace: flux-system
 spec:
   replicas: 1
   selector:
@@ -5597,7 +5597,7 @@ metadata:
     app.kubernetes.io/part-of: flux
     app.kubernetes.io/version: v0.16.0
   name: allow-egress
-  namespace: flux-system-new
+  namespace: flux-system
 spec:
   egress:
   - {}
@@ -5617,7 +5617,7 @@ metadata:
     app.kubernetes.io/part-of: flux
     app.kubernetes.io/version: v0.16.0
   name: allow-scraping
-  namespace: flux-system-new
+  namespace: flux-system
 spec:
   ingress:
   - from:
@@ -5637,7 +5637,7 @@ metadata:
     app.kubernetes.io/part-of: flux
     app.kubernetes.io/version: v0.16.0
   name: allow-webhooks
-  namespace: flux-system-new
+  namespace: flux-system
 spec:
   ingress:
   - from:
